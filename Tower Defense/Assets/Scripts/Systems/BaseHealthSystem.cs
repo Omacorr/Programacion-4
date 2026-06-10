@@ -10,6 +10,7 @@ public class BaseHealthSystem : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
+        Debug.Log("currentHP antes: " + currentHP + " damage: " + damage);
         currentHP = currentHP - damage;
         UIManager.Instance.UpdateHUDnucleo(currentHP);
         if (currentHP <= 0)
@@ -17,5 +18,8 @@ public class BaseHealthSystem : MonoBehaviour
             OnDeath();
         }
     }
-
+    void Start()
+    {
+        currentHP = maxHP;
+    }
 }

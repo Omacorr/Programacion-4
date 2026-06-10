@@ -12,4 +12,8 @@ public class PlayerBuildSystem : MonoBehaviour
         resources = resources - cost;
         UIManager.Instance.UpdateHUDrecursos(resources);
     }
+    void Start()
+    {
+        UIManager.Instance.UpdateHUDrecursos(resources);
+    }
 }

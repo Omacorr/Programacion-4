@@ -12,10 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject victoryPanel;
 
-    void Awake()
-    {
-        Instance = this;
-    }
+    
 
     public void UpdateHUDnucleo(float vidanucleo)
     {
@@ -39,5 +36,11 @@ public class UIManager : MonoBehaviour
     public void ShowVictory()
     {
         victoryPanel.SetActive(true);
+    }
+
+    void Awake()
+    {
+        Instance = this;
+        UpdateHUDnucleo(100f);
     }
 }
